@@ -13,10 +13,10 @@ ENV LANG=en_US.UTF-8
 
 RUN apt-get update && \
     apt-get install -y \
-    git wget flex bison gperf python3 python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
+    git wget flex bison gperf python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
 
 RUN mkdir -p /esp
-RUN cd /esp && git clone --recursive https://github.com/espressif/esp-idf.git -b v5.2-dev && \
+RUN cd /esp && git clone --recursive https://github.com/espressif/esp-idf.git -b v4.4.5 && \
     cd /esp/esp-idf && \
     ./install.sh all
 
@@ -24,3 +24,4 @@ RUN /bin/bash -c "source /esp/esp-idf/export.sh && \
     pip3 install jinja2"
 
 COPY ./build_mros2.bash /tmp/build_mros2.bash
+COPY ./monitor.bash /tmp/monitor.bash

@@ -16,7 +16,7 @@ Building mros2-esp32 tool using docker.
 M5Stack CoreS3
 
 ```bash
-bash build_example.bash /dev/ttyACM0 ../../mros2-esp32 ../workspace/echoback_string esp32s3
+./build_example.bash /dev/ttyACM0 ../../mros2-esp32 ../workspace/echoback_string esp32s3
 ```
 
 
